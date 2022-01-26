@@ -1,14 +1,7 @@
 /// <reference types="@types/google.maps" />
 import { User } from "./User";
 import { Company } from "./Company";
-
-export interface Mappable {
-  location: {
-    lat: number;
-    lng: number;
-  };
-  contentMarker(): string;
-}
+import { Mappable } from "./interfaces/CustomMap";
 
 export class CustomMap {
   private googleMap: google.maps.Map;

@@ -1,5 +1,5 @@
 import faker from "@faker-js/faker";
-import { Mappable } from "./CustomMap";
+import { Mappable } from "./interfaces/CustomMap";
 
 export class User implements Mappable {
   name: string;
