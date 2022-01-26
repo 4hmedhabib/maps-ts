@@ -11,7 +11,7 @@ console.log(user)
 console.log(compnay)
 
 const customMap = new CustomMap();
-customMap.addMarker(user);
-customMap.addMarker(compnay);
+customMap.marker(user);
+customMap.marker(compnay);
 
 
