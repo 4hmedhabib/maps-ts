@@ -26,7 +26,13 @@ export class CustomMap {
     }
 
     addCompanyMarker(compnay: Company) {
-        
+        new google.maps.Marker({
+            map: this.googleMap,
+            position: {
+                lat: compnay.location.lat,
+                lng: compnay.location.lng
+            }
+        })
     }
 
 }
