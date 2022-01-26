@@ -24650,7 +24650,39 @@ require("./chunk-JU2V5CFS.js");
 require("./chunk-3PZV6T5Z.js");
 
 (0, _chunkKDUTDRUH.hb)();
-},{"./chunk-KDUTDRUH.js":"node_modules/@faker-js/faker/dist/esm/chunk-KDUTDRUH.js","./chunk-7AHD6BL4.js":"node_modules/@faker-js/faker/dist/esm/chunk-7AHD6BL4.js","./chunk-JU2V5CFS.js":"node_modules/@faker-js/faker/dist/esm/chunk-JU2V5CFS.js","./chunk-3PZV6T5Z.js":"node_modules/@faker-js/faker/dist/esm/chunk-3PZV6T5Z.js"}],"User.ts":[function(require,module,exports) {
+},{"./chunk-KDUTDRUH.js":"node_modules/@faker-js/faker/dist/esm/chunk-KDUTDRUH.js","./chunk-7AHD6BL4.js":"node_modules/@faker-js/faker/dist/esm/chunk-7AHD6BL4.js","./chunk-JU2V5CFS.js":"node_modules/@faker-js/faker/dist/esm/chunk-JU2V5CFS.js","./chunk-3PZV6T5Z.js":"node_modules/@faker-js/faker/dist/esm/chunk-3PZV6T5Z.js"}],"Company.ts":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Company = void 0;
+
+var faker_1 = __importDefault(require("@faker-js/faker"));
+
+var Company =
+/** @class */
+function () {
+  function Company() {
+    this.companyName = faker_1.default.company.companyName();
+    this.catchPhrase = faker_1.default.company.catchPhrase();
+    this.location = {
+      lat: parseFloat(faker_1.default.address.latitude()),
+      lng: parseFloat(faker_1.default.address.longitude())
+    };
+  }
+
+  return Company;
+}();
+
+exports.Company = Company;
+},{"@faker-js/faker":"node_modules/@faker-js/faker/dist/esm/index.js"}],"User.ts":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {
@@ -24689,11 +24721,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var Company_1 = require("./Company");
+
 var User_1 = require("./User");
 
 var user = new User_1.User();
+var compnay = new Company_1.Company();
 console.log(user);
-},{"./User":"User.ts"}],"C:/Users/ahmed/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+console.log(compnay);
+},{"./Company":"Company.ts","./User":"User.ts"}],"C:/Users/ahmed/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
