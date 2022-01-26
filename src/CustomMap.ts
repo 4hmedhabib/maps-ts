@@ -1,5 +1,4 @@
 /// <reference types="@types/google.maps" />
-
 export class CustomMap {
     private googleMap: google.maps.Map;
 
