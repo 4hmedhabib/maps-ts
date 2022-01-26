@@ -15,5 +15,7 @@ export class User {
     };
   }
 
-  contentMarker;
+  contentMarker(): string {
+    return `User Name : ${this.name}`;
+  }
 }

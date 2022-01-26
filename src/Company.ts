@@ -15,7 +15,12 @@ export class Company {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     };
-    this.isUser = false;
-    this.isCompany = true;
+  }
+
+  contentMarker(): string {
+    return `<div>
+        <h3> User Name: ${this.companyName} </h3>
+        <h5> Catch Phrase: ${this.catchPhrase} </h5>
+    </div>`;
   }
 }
