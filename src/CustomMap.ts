@@ -1,45 +1,40 @@
 /// <reference types="@types/google.maps" />
-import { User } from './User'
-import { Company } from './Company';
+import { User } from "./User";
+import { Company } from "./Company";
 
 interface Mappable {
-    location: {
-        lat: number,
-        lng: number,
-    }
+  location: {
+    lat: number;
+    lng: number;
+  };
 }
 
 export class CustomMap {
-    private googleMap: google.maps.Map;
+  private googleMap: google.maps.Map;
 
-    constructor() {
-        this.googleMap = new google.maps.Map(document.getElementById('map'), {
-            zoom: 1,
-            center: {
-                lat: 0,
-                lng: 0
-            }
-        })
+  constructor() {
+    this.googleMap = new google.maps.Map(document.getElementById("map"), {
+      zoom: 1,
+      center: {
+        lat: 0,
+        lng: 0,
+      },
+    });
+  }
 
-    }
+  addMarker(mappable: Mappable): void {
+    const marker = new google.maps.Marker({
+      map: this.googleMap,
+      position: {
+        lat: mappable.location.lat,
+        lng: mappable.location.lng,
+      },
+    });
 
-    const marker = addMarker(mappable: Mappable): void {
-        new google.maps.Marker({
-            map: this.googleMap,
-            position: {
-                lat: mappable.location.lat,
-                lng: mappable.location.lng
-            }
-        })
-    }
-
-    marker.addListener('click', () => {
-        const infoWindow = new google.maps.InfoWindow({
-            content: 'Hi there!'
-        });
-
-    })
-
-
-    
+    marker.addListener("click", () => {
+      const InfoWindow = new google.maps.InfoWindow({
+        content: "Hi there!",
+      });
+    });
+  }
 }
