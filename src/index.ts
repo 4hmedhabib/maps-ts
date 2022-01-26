@@ -6,7 +6,7 @@
 // const user = new User();
 // const compnay = new Company(); 
 
-new google.maps.Map(document.getElementById('map'), {
+const customMap = new google.maps.Map(document.getElementById('map'), {
     zoom:1 ,
     center: {
         lat: 0,
